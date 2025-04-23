@@ -12,7 +12,10 @@ app = Flask(__name__, static_folder='public/static', template_folder='public')
 tmdb_api_endpoint = "https://api.themoviedb.org/3/search/movie"
 tmdb_api_key = "bc18b03099c2898c08c79ab91336c8af"
 
-uri = "mongodb+srv://m001-student:m001password@server967.eltku.mongodb.net/?retryWrites=true&w=majority&appName=Server967"
+omdb_api_key = "b9424a1f"
+omdb_api_endpoint = "http://www.omdbapi.com/"
+
+uri = "mongodb+srv://m001-student:m001-student@server967.eltku.mongodb.net/?retryWrites=true&w=majority&appName=Server967"
 
 # Connect to MongoDB
 client = MongoClient(uri)
@@ -82,19 +85,15 @@ def get_movie_poster():
     movie_title = request.args.get('title')
     if movie_title:
         params = {
-            'api_key': tmdb_api_key,
-            'query': movie_title
+            'apikey': omdb_api_key,
+            't': movie_title
         }
-        response = requests.get(tmdb_api_endpoint, params=params)
+        response = requests.get(omdb_api_endpoint, params=params)
         if response.status_code == 200:
             data = response.json()
-            if data['results']:
-                poster_path = data['results'][0].get('poster_path')
-                if poster_path:
-                    poster_url = f"https://image.tmdb.org/t/p/w500{poster_path}"
-                    return jsonify({'poster_url': poster_url})
-                else:
-                    return jsonify({'poster_url': default_poster_url})
+            poster_url = data.get('Poster')
+            if poster_url and poster_url != "N/A":
+                return jsonify({'poster_url': poster_url})
             else:
                 return jsonify({'poster_url': default_poster_url})
         else:

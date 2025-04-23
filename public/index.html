@@ -3,55 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/index.css" />
-    <title>Document</title>
+    <title>StreamFlix - Unlimited Movies & TV Shows</title>
 </head>
 <body>
-    
     <header>
         <nav class="nav-bar">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <span>StreamFlix</span>
+            </div>
             <ul>
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Movies</a></li>
-                <li><a href="#" class="nav-link">TV Shows</a></li>
-                <li><a href="#" class="nav-link">My List</a></li>
+                <li><a href="#" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" class="nav-link"><i class="fas fa-film"></i> Movies</a></li>
+                <li><a href="#" class="nav-link"><i class="fas fa-tv"></i> TV Shows</a></li>
+                <li><a href="#" class="nav-link"><i class="fas fa-list"></i> My List</a></li>
             </ul>
+            <div class="user-menu">
+                <i class="fas fa-search search-icon"></i>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
         </nav>
     </header>
+    
     <main>
         <section class="hero-section">
-  <div class="hero-overlay">
-    <h1>Unlimited Movies, TV Shows, and More</h1>
-    <p>Watch anywhere, anytime, on any device</p>
-    <button>Get Started</button>
-  </div>
+            <div class="hero-overlay">
+                <h1>Unlimited Movies, TV Shows, and More</h1>
+                <p>Watch anywhere, anytime, on any device</p>
+                <button class="cta-button">Get Started <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
 
-<div class="search-container">
-    <input type="text" id="search-input" placeholder="Search for movies...">
-    <div class="search-results-container">
-        <div class="search-results"></div>
-    </div>
-</div>
-</section>
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search for movies, TV shows...">
+                <button class="search-button">Search</button>
+            </div>
+            <div class="search-results-container">
+                <div class="search-results"></div>
+            </div>
+        </div>
+
         <section class="movie-section">
-            <h2>Movies You Like</h2>
+            <div class="section-header">
+                <h2>Movies You Like</h2>
+                <a href="#" class="see-all">See All</a>
+            </div>
             <div class="movie-row">
                 <!-- Movies will be generated here -->
             </div>
         </section>
+        
         <section class="movie-section">
-            <h2>Recommended Movies</h2>
+            <div class="section-header">
+                <h2>Recommended Movies</h2>
+                <a href="#" class="see-all">See All</a>
+            </div>
             <div class="movie-row">
                 <!-- Movies will be generated here -->
             </div>
         </section>
+        
         <section class="movie-section">
-            <h2>Trending Movies</h2>
+            <div class="section-header">
+                <h2>Trending Movies</h2>
+                <a href="#" class="see-all">See All</a>
+            </div>
             <div class="movie-row">
                 <!-- Movies will be generated here -->
+            </div>
+        </section>
+        
+        <section class="movie-section">
+            <div class="section-header">
+                <h2>Popular TV Shows</h2>
+                <a href="#" class="see-all">See All</a>
+            </div>
+            <div class="movie-row">
+                <!-- TV shows will be generated here -->
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-film"></i>
+                <span>StreamFlix</span>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 StreamFlix. All rights reserved.
+        </div>
+    </footer>
 
     <script src="/index.js"></script>
 </body>
